@@ -3,12 +3,13 @@ from selenium import webdriver
 import pytest
 from pages.loginpage import LoginPage_1
 from pages.homepage import HomePage
+from testdata.data import *
 
 @pytest.fixture(scope='session')
 def test_lauch_browser():
     global driver
     driver=webdriver.Chrome(executable_path="C:/Users/BTM-FAC/PycharmProjects/Automation_1/drivers/chromedriver.exe")
-    driver.get("http://localhost:8097/login.do")
+    driver.get(URL)
     driver.maximize_window()
     driver.implicitly_wait(30)
 
